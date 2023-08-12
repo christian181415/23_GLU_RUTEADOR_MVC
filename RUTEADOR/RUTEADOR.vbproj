@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C48E0BB7-82C0-414F-A527-18F6852938CD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>RUTEADOR.My.MyApplication</StartupObject>
+    <RootNamespace>RUTEADOR</RootNamespace>
+    <AssemblyName>RUTEADOR</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>RUTEADOR.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>RUTEADOR.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Assets\IMG\Icons\Rutas.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\23_GLU_CALCULO_RUTAS\Calculo_Rutas\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuraciones\ClassAccesos.vb" />
+    <Compile Include="Configuraciones\ClassAsignaciones.vb" />
+    <Compile Include="Configuraciones\GIF.vb" />
+    <Compile Include="Configuraciones\PDF.vb" />
+    <Compile Include="Configuraciones\ClassEntidades.vb" />
+    <Compile Include="Func_Principal\WinPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Func_Principal\WinPrincipal.Designer.vb">
+      <DependentUpon>WinPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Func_Registros\WinRegistros.Designer.vb">
+      <DependentUpon>WinRegistros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Func_Registros\WinRegistros.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Func_Registros\WinRegistros.resx">
+      <DependentUpon>WinRegistros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Func_Principal\WinPrincipal.resx">
+      <DependentUpon>WinPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\IMG\Icons\Alert_Active.png" />
+    <Content Include="Assets\IMG\Icons\Alert_Disable.png" />
+    <Content Include="Assets\IMG\Icons\BtnConfig_Active.png" />
+    <Content Include="Assets\IMG\Icons\BtnConfig_Disable.png" />
+    <Content Include="Assets\IMG\Icons\BtnPDF_Active.png" />
+    <Content Include="Assets\IMG\Icons\BtnPDF_Disable.png" />
+    <Content Include="Assets\IMG\Icons\IconAlert.gif" />
+    <Content Include="Assets\IMG\Icons\LastPDF_Active.png" />
+    <Content Include="Assets\IMG\Icons\LastPDF_Disable.png" />
+    <Content Include="Assets\IMG\PDF\Logo_LUIN_O.png" />
+    <Content Include="Assets\IMG\PDF\RPagoLogo.jpg" />
+    <Content Include="Assets\IMG\ToolTip\FEGALI.png" />
+    <Content Include="Assets\IMG\ToolTip\SeleccionCaseta.png" />
+    <Content Include="Assets\IMG\ToolTip\TOKA.png" />
+    <Content Include="Assets\IMG\Icons\Rutas.ico" />
+    <None Include="Resources\BtnCalendarDisable.png" />
+    <None Include="Resources\BtnPDF_Disable.png" />
+    <None Include="Resources\BtnConfig_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Func_Casetas\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
